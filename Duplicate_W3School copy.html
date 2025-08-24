@@ -1,0 +1,2250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W3 School</title>
+    <style>
+    
+        .header {
+            background-color: rgb(21,32,43);
+            color: #ddd;
+            height: 90px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #tutorial {
+            height: 40px;
+            width: 100px;
+            background-color: grey;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 50px;
+            cursor:pointer;
+            border: 2px solid #03fc98;
+        }
+
+        #tutorial:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+        }
+
+        #exercise {
+            height: 40px;
+            width: 100px;
+            background-color:grey;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 50px;
+            cursor:pointer;
+            border: 2px solid #3fd7eb;
+        }
+
+        #exercise:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+        }
+
+        #certificate {
+            height: 40px;
+            width: 100px;
+            background-color: grey;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 50px;
+            cursor:pointer;
+            border: 2px solid burlywood;
+        }
+
+        #certificate:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+        }
+
+        #service {
+            height: 40px;
+            width: 100px;
+            background-color:grey;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 50px;
+            cursor:pointer;
+            border: 2px solid bisque;
+        }
+
+        #service:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+        }
+
+        #search-box {
+            height: 30px;
+            width: 170px;
+            color: black;
+            border-radius: 50px;
+            border: 4px solid pink;
+            font-style:italic;
+        }
+
+        #search-box:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+        }
+
+        #space {
+            font-size: 15px;
+            color: white;
+            background-color: grey;
+            border-radius: 20px;
+            height: 42px;
+            width: 100px;
+        }
+
+        #space:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+            transform: scale(1.05);
+        }
+
+        #teacher {
+            font-size: 15px;
+            color: white;
+            background-color: grey;
+            border-radius: 20px;
+            height: 42px;
+            width: 100px;
+        }
+
+        #teacher:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+            transform: scale(1.05);
+        }
+
+        #upgrade {
+            font-size: 15px;
+            color: white;
+            background-color: grey;
+            border-radius: 20px;
+            height: 42px;
+            width: 100px;
+        }
+
+        #upgrade:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+            transform: scale(1.05);
+        }
+
+        #get-certified {
+            font-size: 15px;
+            color: white;
+            background-color: grey;
+            border-radius: 20px;
+            height: 42px;
+            width: 100px;
+        }
+
+        #get-certified:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+            transform: scale(1.05);
+        }
+
+        #sign-in {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            background: #4cafef;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #sign-in:hover {
+            box-shadow: 0 0 15px #4cafef, 0 0 30px #4cafef;
+            transform: scale(1.05);
+        }  
+
+        .navbar {
+            color: #ddd;
+            background-color: #282a35;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            cursor: pointer;
+            margin-top: 0px;
+            /* box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D; */
+        }
+
+        /* .msg {               Line No. 1718 to 1729
+            margin-top: 0px;
+            padding-top: 0px;
+            background-color: rgb(13,23,33);
+        } */
+
+        body {
+            margin: 0;
+        }
+        .wave-container {
+            background-color: #0c151d; /* Dark navy */
+            height: 272px;
+            position: relative;
+            border: 2px solid #d6ece1; 
+            color: white;
+            text-align: center;
+            padding: 0px;
+            margin: 0px;
+        }
+        .wave-container svg {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: auto;
+        }
+
+        .bottom-section {
+        background-color: #d6ece1; 
+        height: 200px;
+        color: white;
+        }
+
+        #learn {
+            color: white;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #developer-site {
+            color: burlywood;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #search2 {
+            margin-left: 550px;
+            height: 40px;
+            width: 400px;
+            font-size: 15px;
+            font-style: italic;
+            border-radius: 20px;
+            border: 2px solid pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #search2:hover {
+            box-shadow: 0 0 15px #FFC0C7, 0 0 30px #04AA6D;
+            transform: scale(1.05);
+        }
+
+        #info {
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 20px;
+            margin: 0px;
+        }
+        
+        #info:hover {
+            color: burlywood;
+        }
+
+        /* --------------------------HTML Container begin-------------------------- */
+        .container {
+            border: 2px;
+            height: 500px;
+            width: 1520px;
+            margin: 0px;
+            padding: 0px;
+            background-color: #D9EEE1;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+        }
+
+        #html {
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #web-page {
+           font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #learn-html {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #learn-html:hover {
+            background-color: greenyellow;
+        }
+
+        #video-tutorial {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color:  #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #video-tutorial:hover {
+            background-color: beige;
+        }
+
+        #html-reference {
+            font-size: 15px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #html-reference:hover {
+            background-color: aqua;
+        }
+
+        #certified {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: hwb(158 2% 33%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor:pointer;
+        }
+        #certified:hover{
+            background-color: orange;
+        }
+
+        /* HTML Example Code */
+        
+        #example-code {
+            border: none;
+            height: 30px;
+            width: 30px;
+        }
+
+        #html-example {
+            height: 498px;
+            width: 500px;
+        }
+
+/* ---------------------------------CSS Container Begin---------------------------------- */
+        .container2 {
+            border: 2px;
+            height: 500px;
+            width: 1520px;
+            background-color: #FFF4A3;
+            margin: 0px;
+            display: flex;
+        }
+
+        #css {
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 70px;
+            width: 700px;
+            margin: 0px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #web-page2 {
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #learn-css {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #learn-css:hover {
+            background-color: greenyellow;
+        }
+
+        #css-reference {
+            font-size: 15px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #css-reference:hover {
+            background-color: aqua;
+        }
+
+        #certified2 {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: hwb(158 2% 33%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor:pointer;
+        }
+        #certified2:hover{
+            background-color: orange;
+        }
+
+        /* CSS Example Code */
+        
+        #example-code2 {
+            border: none;
+            height: 30px;
+            width: 30px;
+        }
+
+        #css-example {
+            height: 498px;
+            width: 500px;
+        }
+
+        /* ---------------------------Java Container Begin-------------------------- */
+
+        .container3 {
+            border: 2px;
+            height: 500px;
+            width: 1520px;
+            background-color: #282A35;
+            margin: 0px;
+            display: flex;
+        }
+
+        #java {
+            color: white;
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #web-page3 {
+            color: white;
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 0px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #learn-java {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #learn-java:hover {
+            background-color: greenyellow;
+        }
+
+        #java-references {
+            font-size: 15px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #java-references:hover {
+            background-color: aqua;
+        }
+
+        #certified3 {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: hwb(158 2% 33%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor:pointer;
+        }
+        #certified3:hover{
+            background-color: orange;
+        }
+
+        /* JAVA Example Code */
+        
+        #example-code3 {
+            border: none;
+            height: 30px;
+            width: 30px;
+            background-color: grey;
+        }
+
+        #java-example {
+            height: 498px;
+            width: 500px;
+        }
+
+        /* -----------------------------Python Container Begin:--------------------------- */
+
+        .container4 {
+            border: 2px;
+            height: 500px;
+            width: 1520px;
+            background-color: #F3ECEA;
+            margin-top: 0px;
+            display: flex;
+        }
+
+        #python {
+            color: black;
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #web-page4 {
+            color: black;
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #learn-python {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #learn-python:hover {
+            background-color: greenyellow;
+        }
+
+        #python-references {
+            font-size: 15px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #python-references:hover {
+            background-color: aqua;
+        }
+
+        #certified4 {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: hwb(158 2% 33%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor:pointer;
+        }
+        #certified4:hover{
+            background-color: orange;
+        }
+
+        /* PYTHON Example Code */
+        
+        #example-code4 {
+            border: none;
+            height: 30px;
+            width: 30px;
+            background-color: grey;
+        }
+
+        #python-example {
+            height: 480px;
+            width: 490px;
+            padding-top: 0;
+        }
+
+        /* -------------------------------SQL container begin------------------------------- */
+        .container5 {
+            border: 2px;
+            height: 500px;
+            width: 1520px;
+            background-color:#96D4D4;
+            display: flex;
+            /* margin: 0px; */
+
+        }
+
+        #sql {
+            color: black;
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #web-page5 {
+            color: black;
+            font-size: 30px;
+            height: 70px;
+            width: 700px;
+            margin: 2px;
+            flex-direction: row;
+            text-align: center;
+            padding-top: 35px;
+        }
+
+        #learn-SQL {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #learn-SQL:hover {
+            background-color: greenyellow;
+        }
+
+        #SQL-references {
+            font-size: 15px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: #04AA6D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #SQL-references:hover {
+            background-color: aqua;
+        }
+
+        #certified5 {
+            font-size: 18px;
+            height: 40px;
+            width: 150px;
+            border-radius: 10px;
+            border: 2px solid palevioletred;
+            background-color: hwb(158 2% 33%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left:250px;
+            margin-top: 10px;
+            cursor:pointer;
+        }
+        #certified5:hover{
+            background-color: orange;
+        }
+
+        /* SQL Example Code */
+        
+        #example-code5 {
+            border: none;
+            height: 30px;
+            width: 30px;
+            background-color: grey;
+        }
+
+        #SQL-example {
+            height: 480px;
+            width: 490px;
+            padding-top: 0;
+        }
+
+        /* --------------------------------PHP and jQuery----------------------------- */
+        .container6 {
+            border: 2px;
+            height: 400px;
+            width: 1520px;
+            background-color:rgb(13, 23, 33);
+            padding-top: 2px;
+            display: flex;
+        }
+
+        #PHP-box6 {
+            height: 300px;
+            width: 600px;
+            background-color: pink;
+            margin: 80px;
+            border-radius: 20px;
+
+        }
+
+        #PHP {
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #jQuery-box6 {
+            height: 300px;
+            width: 600px;
+            background-color: #FFF4A3;;
+            margin: 80px;
+            border-radius: 20px;
+
+        }
+
+        #jQuery {
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        /* -------------------------Java and C----------------------- */
+          .two-container6 {
+            border: 2px;
+            height: 400px;
+            width: 1500px;
+            background-color:rgb(13, 23, 33);
+            padding: 10px;
+            display: flex;
+            margin-top: 0px;
+        }
+
+        #java-box6 {
+            height: 300px;
+            width: 600px;
+            background-color: #F3ECEA;
+            margin: 80px;
+            border-radius: 20px;
+
+        }
+
+        #java {
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #c-box6 {
+            height: 300px;
+            width: 600px;
+            background-color: #D9EEE1;
+            margin: 80px;
+            border-radius: 20px;
+
+        }
+
+        #c {
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        /* -------------------------------W3.CSS and Bootstrap----------------------------- */
+        .three-container6 {
+            border: 2px;
+            height: 450px;
+            width: 1500px;
+            background-color:rgb(13, 23, 33);
+            padding: 10px;
+            display: flex;
+            margin: 0px;
+        }
+
+        #css-box6 {
+            height: 300px;
+            width: 600px;
+            background-color: #f1f1f1;
+            margin: 80px;
+            border-radius: 20px;
+
+        }
+
+        #css {
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+        #bootstrap-box6 {
+            height: 300px;
+            width: 600px;
+            background-color: #fff ;
+            margin: 80px;
+            border-radius: 20px;
+
+        }
+
+        #bootstrap {
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+        }
+
+
+        /* ----------------------------------Container C and C#------------------------- */
+        .container-c-css{
+            border: 2px;
+            height: 400px;
+            width: 1500px;
+            background-color:rgb(13, 23, 33);
+            padding: 10px;
+            display: flex;
+            margin: 0px;
+        }
+
+        #c-lang {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: pink;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #css-lang {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: #FFF4A3;
+            margin: 100px;
+            border-radius: 15px;
+        }
+/* ---------------------------------R,Kotlin,Node.js,React----------------------- */
+        #row1-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #r {
+            color: black;
+            background-color:#F3ECEA;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #r:hover {
+            background-color: #fff;
+        }
+
+        #kotlin {
+            color: black;
+            background-color: #D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #kotlin:hover {
+            background-color:#fff;
+        }
+
+        #node_js {
+            color: black;
+            background-color: #96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #node_js:hover {
+            background-color: #ddd;
+        }
+
+        #react {
+            color: black;
+            background-color: #FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #react:hover {
+            background-color: #f1f1f1;
+        }
+        /* --------------------------JSON,Vue,MySQL,XML------------------------ */
+        #row2-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            /* height: auto; */
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #json {
+            color: black;
+            background-color:#FFF4A3;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #json:hover {
+            background-color: #f1f1f1;
+        }
+
+        #vue {
+            color: black;
+            background-color:#F3ECEA;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #vue:hover {
+            background-color: #f1f1f1;
+        }
+
+        #mysql {
+            color: black;
+            background-color:#D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #mysql:hover {
+            background-color: #fff;
+        }
+
+        #xml {
+            color: black;
+            background-color:#f1f1f1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #xml:hover {
+            background-color: #fff;
+        }
+/* -------------------svg,icon,rwd,graphics------------------------ */
+        #row3-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #sass {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+        #sass:hover {
+            background-color: #fff;
+        }
+
+        #icon {
+            color: black;
+            background-color:#FFF4A3;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #icon:hover {
+            background-color: #f1f1f1;
+        }
+
+        #rwd {
+            color: black;
+            background-color:#F3ECEA ;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #rwd:hover {
+            background-color: #f1f1f1;
+        }
+
+        #graphics {
+            color: black;
+            background-color:#D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #graphics:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* -----------------------------svg,canvas,Raspberry pi, cyber security--------------------------*/
+
+         #row4-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #svg {
+            color: black;
+            background-color:#96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #svg:hover {
+            background-color: #f1f1f1;
+        }
+
+        #canvas {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #canvas:hover {
+            background-color: #fff;
+        }
+
+        #raspberry {
+            color: black;
+            background-color:#FFF4A3;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #raspberry:hover {
+            background-color: #fff;
+        }
+
+        #cybersecurity {
+            color: black;
+            background-color:#F3ECEA;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #cybersecurity:hover {
+            background-color: #fff;
+        }
+
+/* -------------------------colors,Git,Matplotlib,Numpy---------------------------*/
+        #row5-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #colors {
+            color: black;
+            background-color:#D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #colors:hover {
+            background-color: #f1f1f1;
+        }
+
+        #git {
+            color: black;
+            background-color:#96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #git:hover {
+            background-color: #fff;
+        }
+
+        #matplotlib {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #matplotlib:hover {
+            background-color: #fff;
+        }
+
+        #numpy {
+            color: black;
+            background-color:#FFF4A3;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #numpy:hover {
+            background-color: #fff;  
+        }
+
+        /* -------------------------Pandas,SciPy,ASP,AngularJS---------------------------*/
+        #row6-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pandas {
+            color: black;
+            background-color:#F3ECEA;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #pandas:hover {
+            background-color: #fff;
+        }
+
+        #scipy {
+            color: black;
+            background-color:#D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #scipy:hover {
+            background-color: #f1f1f1;
+        }
+
+        #asp {
+            color: black;
+            background-color:#96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #asp:hover {
+            background-color: #f1f1f1;
+        }
+
+        #angularjs {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #angularjs:hover {
+            background-color: #f1f1f1;
+        }
+/*--------------------AppML,Go,TypeScript,Django--------------------------*/
+        #row7-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #appml {
+            color: black;
+            background-color:#F3ECEA;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #appml:hover {
+            background-color: #fff;
+        }
+
+        #go {
+            color: black;
+            background-color:#D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #go:hover {
+            background-color: #f1f1f1;
+        }
+
+        #typescript {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #typescript:hover {
+            background-color: #f1f1f1;
+        }
+
+        #django {
+            color: black;
+            background-color:#96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #django:hover {
+            background-color: #f1f1f1;
+        }
+/*----------------MongoDB,Statistics,Data Science, PostgreSQL-----------------------*/
+        #row8-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mongodb {
+            color: black;
+            background-color:#FFF4A3;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #mongodb:hover {
+            background-color: #fff;
+        }
+
+        #statistics {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #statistics:hover {
+            background-color: #fff;
+        }
+
+        #datascience {
+            color: black;
+            background-color:#96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #datascience:hover {
+            background-color: #fff;
+        }
+
+        #postgresql {
+            color: black;
+            background-color:#F3ECEA;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #postgresql:hover {
+            background-color: #fff;
+        }
+/*----------------------HowTo,Rust,Spaces,Typing Speed------------------------------*/
+        #row9-boxes {
+            color: white;
+            background-color:rgb(13, 23, 33);
+            height: auto;
+            width: 1520px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #howto {
+            color: black;
+            background-color:#FFC0C7;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #howto:hover {
+            background-color: #fff;
+        }
+
+        #rust {
+            color: black;
+            background-color:#96D4D4;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #rust:hover {
+            background-color: #fff;
+        }
+
+        #spaces {
+            color: black;
+            background-color:#FFF4A3;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #spaces:hover {
+            background-color: #fff;
+        }
+
+        #typingspeed {
+            color: black;
+            background-color:#D9EEE1;
+            height: 120px;
+            width: 300px;
+            border-radius: 10px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            cursor: pointer;
+        }
+
+        #typingspeed:hover {
+            background-color: #fff;
+        }
+
+/*----------------container-Excel-DSA-------------------*/
+        .excel-dsa{
+            border: 2px;
+            height: 300px;
+            width: 1500px;
+            background-color:rgb(13, 23, 33);
+            padding: 10px;
+            display: flex;
+            margin: 0px;
+        }
+
+        #excel {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: #96D4D4;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #excel:hover {
+            background-color: #fff;
+        }
+        #dsa {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: #FFF4A3;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #dsa:hover {
+            background-color: #fff;
+        }
+
+/*----------------container-MachineLearning-Artificial Intelligence-------------------*/
+        .ml-ai{
+            border: 2px;
+            height: 300px;
+            width: 1500px;
+            background-color:rgb(13, 23, 33);
+            padding: 10px;
+            display: flex;
+            margin: 0px;
+        }
+
+        #ml {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: pink;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #ml:hover {
+            background-color: #fff;
+        }
+
+        #ai {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: #F3ECEA;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #ai:hover {
+            background-color: #fff;
+        }
+
+/*------------------container-Introduction Programming - Bash---------------------------*/
+        .ip-bash{
+            border: 2px;
+            height: 300px;
+            width: 1500px;
+            background-color:rgb(13, 23, 33);
+            padding: 10px;
+            display: flex;
+            margin: 0px;
+        }
+
+        #ip {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color:#D9EEE1;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #ip:hover {
+            background-color: #fff;
+        }
+        #bash {
+            height: 80px;
+            width: 750px;
+            color: black;
+            text-align: center;
+            padding-top: 80px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            background-color: #96D4D4 ;
+            margin: 100px;
+            border-radius: 15px;
+        }
+
+        #bash:hover {
+            background-color: #fff;
+        }
+/*--------------------Log-in ,Sign-up---------------------------*/
+
+        .sign-up-free {
+            margin-top: 0px;
+            padding-top: 0px;
+            height: auto;
+            background-color: #D9EEE1;
+            font-family: Source Sans Pro, sans-serif;
+            padding-top : 0px;
+        }
+        
+        h1,p {
+            text-align: center;
+        }
+
+        #dashboard {
+            align-items: center;
+            height: 700px;
+            width: 1400px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+            <div class="header">
+
+        <select id="tutorial">
+            <option>Tutorial</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>Java</option>
+            <option>Python</option>
+            
+        <select>
+
+        <select id="exercise">
+            <option>Exercise</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>Java</option>
+            <option>Python</option>
+        </select>
+
+        <select id="certificate">
+            <option>Certificate</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>Java</option>
+            <option>Python</option>
+        </select>
+
+        <select id="service">
+            <option>Service</option>
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>Java</option>
+            <option>Python</option>
+        </select>
+        
+        <search>
+            <input id="search-box" placeholder="Search..">
+        </search>
+
+        <button id="space"> 👩‍💻 Space</button>
+
+        <button id="teacher">🧑‍🎓 For Teachers </button>
+
+        <button id="upgrade">✨Upgrade </button>
+
+        <button id="get-certified">🛒 Get Certified</button>
+
+        <button id="sign-in" type="submit">👤 Sign In</button>
+
+        </div>
+    </header>
+
+    <div class="navbar">
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JAVASCRIPT</p>
+        <p>SQL</p>
+        <p>PYTHON</p>
+        <p>JAVA</p>
+        <p>PHP</p>
+        <p>W3.CSS</p>
+        <p>C</p>
+        <p>C++</p>
+        <p>C#</p>
+        <p>BOOTSTRAP</p>
+        <p>REACT</p>
+        <p>MYSQL</p>
+        <p>JQUERY</p>
+        <p>EXCEL</p>
+        <p>XML</p>
+        <p>DJANGO</p>
+    </div>
+
+<!-- <div class="msg">
+        <p id="learn">Learn to Code</p>
+        <p id="developer-site">With the world's largest web developer site</p>
+        
+       <div>
+            <search> 
+                <input  id="search2" type="text" value="Search our tutorial, e.g HTML">
+            </search>
+       </div>
+
+       <p id="info"><b><u>Not sure Where to Begin ? </u></b></p>
+    </div> -->
+
+    <div class="wave-container">
+        <h2>Learn Code</h2>
+        <h3>With the world's largest web developer site</h3>
+        <div>
+            <search> 
+                <input  id="search2" placeholder="Search our tutorial, e.g HTML">
+            </search>
+       </div>
+       <h3> <b><u>Not Sure Where to Begin ?</b></u></h3>
+        <svg viewBox="0 0 1440 150" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#d6ece1" d="M0,80 C400,140 1040,20 1440,80 L1440,150 L0,150 Z"></path>
+        </svg>
+    </div>
+
+    <!---------------------------------HTML Container Begin---------------------------->
+
+    <div class="container">
+        <div id="container-box1">
+            <div id="html">
+            <h1>HTML</h1>
+            </div>
+
+            <div id="web-page">
+            <p><b>The Language for Building Web Pages</b></p>
+            </div>
+
+            <button id="learn-html"><b>Learn HTML</b></button>
+            <button id="video-tutorial"><b>Video-Tutorial</b></button>
+            <button id="html-reference"><b>HTML References</b></button>
+            <button id="certified"><b>Get Certified</b></button>
+        </div>
+
+        <div id="example-code">
+            <img id="html-example" src="HTML-example.jpg.png" alt="">
+        </div>
+
+    </div> 
+<!------------------------------CSS container Begin------------------------------>
+            <div class="container2">
+                <div id="container-box2">
+            <div id="css">
+            <h1>CSS</h1>
+            </div>
+
+            <div id="web-page2">
+            <p><b>The language for styling web pages</b></p>
+            </div>
+
+            <button id="learn-css"><b>Learn CSS</b></button>
+            <button id="css-reference"><b>CSS References</b></button>
+            <button id="certified2"><b>Get Certified</b></button>
+        </div>
+
+        <div id="example-code2">
+            <img id="css-example" src="CSS_Screenshot.html.png" alt="">
+        </div>
+
+            </div>
+
+            <!--------------------JAVA Container Begin------------------------->
+            <div class="container3">
+                <div id="container-box3">
+            <div id="java">
+            <h1>JAVA</h1>
+            </div>
+
+            <div id="web-page3">
+            <p><b>The language for programming web pages</b></p>
+            </div>
+
+            <button id="learn-java"><b>Learn CSS</b></button>
+            <button id="java-references"><b>CSS References</b></button>
+            <button id="certified3"><b>Get Certified</b></button>
+        </div>
+
+        <div id="example-code3">
+            <img id="java-example" src="Java.screenshot.png" alt="">
+        </div>
+
+        </div>
+
+        <!------------------------------Python Container Begin:------------------------------->
+           <div class="container4">
+                <div id="container-box4">
+            <div id="python">
+            <h1>PYTHON</h1>
+            </div>
+
+            <div id="web-page4">
+            <p><b>A popular programming language</b></p>
+            </div>
+
+            <button id="learn-python"><b>Learn Python</b></button>
+            <button id="python-references"><b>Python-references</b></button>
+            <button id="certified4"><b>Get Certified</b></button>
+        </div>
+
+        <div id="example-code4">
+            <img id="python-example" src="python_screenshot.png" alt="">
+        </div>
+
+        </div>
+        <!-----------------------------SQL Container Begin:------------------------------->
+        <div class="container5">
+                <div id="container-box5">
+            <div id="sql">
+            <h1>SQL</h1>
+            </div>
+
+            <div id="web-page5">
+            <p><b>A language for accessing databases</b></p>
+            </div>
+
+            <button id="learn-SQL"><b>Learn SQL</b></button>
+            <button id="SQL-references"><b>SQL-references</b></button>
+            <button id="certified5"><b>Get Certified</b></button>
+        </div>
+
+        <div id="example-code5">
+            <img id="sql-example" src="SQL.screenshot.png" alt="">
+        </div>
+
+        </div>
+        
+
+        <!-----------------------PHP and jQuery-------------------------------->
+        <div class="container6">
+                <div id="PHP-box6">
+                    <div id="PHP"><h1>PHP</h1>
+                        <p>A Web Server Programming Language</p>
+                    </div>
+                </div>
+
+                <div id="jQuery-box6">
+                    <div id="jQuery"><h1>jQuery</h1>
+                        <p>JS Library for Developing Web-Pages</p>
+                    </div>
+                </div>
+                </div>
+
+                <!--------------------------------Java and C----------------------------------->
+            <div class="two-container6">
+                <div id="java-box6">
+                    <div id="java"><h1>JAVA</h1>
+                        <p>A Programming Language</p>
+                    </div>
+                </div>
+
+                <div id="c-box6">
+                    <div id="c"><h1>C</h1>
+                        <p>A Programming Language</p>
+                    </div>
+                </div>
+            </div>
+        
+
+            <!---------------------------------CSS and Bootstrap-------------------------------->
+            <div class="three-container6">
+                <div id="css-box6">
+                    <div id="css"><h1>CSS</h1>
+                        <p>A Programming Language</p>
+                    </div>
+                </div>
+
+                <div id="bootstrap-box6">
+                    <div id="bootstrap"><h1>BootStrap</h1>
+                        <p>A Programming Language</p>
+                    </div>
+                </div>
+                </div>
+<!--------------------container-c-css-------------------------------->
+
+               <div class="container-c-css">
+                    <div id="c-lang">C</div>
+                    <div id="css-lang">C#</div>
+               </div>
+
+<!---------------------R,Kotlin,Node.js,React------------------------->
+               <div id="row1-boxes">
+                    <div id="r">R</div>
+                    <div id="kotlin">Kotlin</div>
+                    <div id="node_js">Node.js</div>
+                    <div id="react">React</div>
+               </div>
+
+<!-- ------------------JSON,Vue,MySQL,XML----------------------------->
+            <div id="row2-boxes">
+                <div id="json">JSON</div>
+                <div id="vue">Vue</div>
+                <div id="mysql">MySQL</div>
+                <div id="xml">XML</div>
+            </div>
+<!--------------------Sass,Icons,RWD,Graphics-------------------------->
+            <div id="row3-boxes">
+                <div id="sass">Sass</div>
+                <div id="icon">Icons</div>
+                <div id="rwd">RWD</div>
+                <div id="graphics">Graphics</div>
+            </div>
+
+<!---------------------svg,canvas,rwd,graphics------------------------->
+            <div id="row4-boxes">
+                <div id="svg">SVG</div>
+                <div id="canvas">Canvas</div>
+                <div id="raspberry">Raspberry Pi</div>
+                <div id="cybersecurity">Cyber Security</div>
+            </div>
+<!---------------------colors,Git,Matplotlib,NumPy--------------------->
+            <div id="row5-boxes">
+                <div id="colors">Colors</div>
+                <div id="git">Git</div>
+                <div id="matplotlib">Matplotlib</div>
+                <div id="numpy">Numpy</div>
+            </div>
+
+<!---------------------Pandas,SciPy,ASP,AngularJS----------------------->
+            <div id="row6-boxes">
+                <div id="pandas">Pandas</div>
+                <div id="scipy">Scipy</div>
+                <div id="asp">ASP</div>
+                <div id="angularjs">AngularJS</div>
+            </div>
+<!---------------------AppML,Go,TypeScript,Django----------------------->
+            <div id="row7-boxes">
+                <div id="appml">AppMl</div>
+                <div id="go">Go</div>
+                <div id="typescript">TypeScript</div>
+                <div id="django">Django</div>
+            </div>
+
+<!--------------------MOngoDB,Statistics,DataScience,PostgreSQL----------------------->
+            <div id="row8-boxes">
+                <div id="mongodb">MongoDB</div>
+                <div id="statistics">Statistics</div>
+                <div id="datascience">DataScience</div>
+                <div id="postgresql">PostgreSQL</div>
+            </div>
+<!---------------------HowTo,Rust,Spaces,Typing Speed--------------------------------->
+            <div id="row9-boxes">
+                <div id="howto">How To</div>
+                <div id="rust">Rust</div>
+                <div id="spaces">Spaces</div>
+                <div id="typingspeed">Typing Speed</div>
+            </div>
+
+<!--------------------Container-Excel-DSA-------------------------------->
+
+               <div class="excel-dsa">
+                    <div id="excel">Excel</div>
+                    <div id="dsa">DSA</div>
+               </div>
+
+<!--------------------Container-Excel-DSA-------------------------------->
+
+               <div class="ml-ai">
+                    <div id="ml">Machine-Learning</div>
+                    <div id="ai">Artificial-Intelligence</div>
+               </div>
+
+<!--------------------Container-Introduction Programming-Bash------------->
+
+               <div class="ip-bash">
+                    <div id="ip">Inroduction Programming</div>
+                    <div id="ai">Bash</div>
+               </div>
+
+<!--------------------Log-in ,Sign-up--------------------------->
+
+               <div class="sign-up-free">
+                    <h1>Log in / Sign up</h1>
+                    <p>Create a <b>free</b> account to track your progress, and get access to more features and learning materials.</p>
+                    <img id="dashboard" src="https://www.w3schools.com/dashboard1.webp" alt="">
+
+               </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
