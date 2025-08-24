@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+</head>
+    <style>
+
+        body {
+            /* background-image: url(Anuj.jpg) no-repeat center center/cover; */
+            opacity: 0.8;
+            position:relative ;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(Anuj.jpg);
+            background-size: cover;
+            z-index: -1;
+        }
+
+
+        .navbar {
+            background-color: #5d615d;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* This a {color: white} is used as navbar font  */
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header1 {
+            color: white;
+            background-color: #bdbab3;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 2px;
+            text-decoration: none;
+        }
+
+        .search-icon {
+            color: black;
+            height: 40px;
+            width: 40px;
+            background-color: orange;
+        }
+
+        .group {
+            margin: 3px;
+            /* width: 550px; */
+            /* padding-left: 120px; */
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+        }
+        .header2 {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        #show {
+            color: white;
+            background-color: green;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            cursor: pointer;
+            border-radius: 5px;
+            height: 30px;
+            width: 70px;
+        }
+
+        #show:hover {
+            color: white;
+            /* background-color:#32a889; */
+        }
+
+        .design1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .design {
+            color: white;
+            background-color: black;
+            width: 150px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border: 2px solid black;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .design:hover {
+            background-color:#636361;
+        }
+
+        .formatting {
+            color: white;
+            background-color: black;
+            width: 130px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border: 2px solid black;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 10px;
+        }
+
+        .formatting:hover {
+            background-color: #636361;
+        }
+
+        .option {
+            color: white;
+            background-color: black;
+            width: 145px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            border: 2px solid black;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 10px;
+
+        }
+
+        .option:hover{
+            background-color: #636361;
+        }
+
+        .year-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 45px;
+        }
+
+        .past {
+            margin: 15px;
+            cursor: pointer;
+        }
+        .present {
+            margin: 15px;
+            border-radius: 10px;
+            background-color: black;
+        }
+
+        .future {
+            margin: 15px;
+            cursor: pointer;
+        }
+
+        .msg {
+            font-size: 30px;
+            font-family: cursive;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #week {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2px;
+            
+        }
+
+        .first-row {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .jan {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 230px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .feb {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .mar {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .apr {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .second-row {
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+
+        .may {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .june {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px;*/
+            border: 2px solid black; 
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .july {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .aug {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .third-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .sep {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .oct {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .nov {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .dec {
+            color: #19a0d1;
+            /* height: 220px;
+            width: 235px; */
+            border: 2px solid black;
+            text-align: center;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        #date {
+            text-align: center;
+            font-style: italic;
+        }
+
+        #holiday {
+            text-align: center;
+            font-style: italic;
+        }
+
+    </style>
+<body>
+
+    <div class="navbar">
+            <a href="#">News</a>
+            <a href="#">World Clock</a>
+            <a href="#">Time Zone</a>
+            <a href="#">Calendar</a>
+            <a href="#">Weather</a>
+            <a href="#">Sun, Moon & Space</a>
+            <a href="#">Timers</a>
+            <a href="#">Calculators</a>
+            <a href="#">My Account</a>
+
+            <div class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            
+    </div>
+
+    <div class="header1">
+        <a href="#">Calendar2025</a>
+        <a href="#">Calendar2026</a>
+        <a href="#">Monthly Calendar</a>
+        <a href="#">PDF Calendar</a>
+        <a href="#">ADD Event</a>
+        <a href="#">Calendar Creator</a>
+        <a href="#">Holiday</a>
+        <a href="#">On This Day</a>
+        <a href="#">Fun Holiday</a>
+        <a href="#">Months</a>
+        <a href="#">WeekDays</a>
+        <a href="#">Leap Year</a>
+        <a href="#">Calendar and Holiday News</a>
+    </div>
+
+    <div class="group">
+        <header class="header2">
+            <h3>Create Calendar:</h3>
+            <p><b>Year:</b><button>2025</button></p>
+            <p><b>Country:</b><select class="region">
+                <option>India</option>
+                <option>America</option>
+                <option>China</option>
+                <option>Argentina</option>
+                <option>Australia</option>
+                <option>German</option>
+            </select></p>
+            <button id="show">Show</button>
+        </header>
+    </div>
+
+    <div class="design1">
+    <select class="design">
+        <option>Quick Design</option>
+        <option>Standard</option>
+        <option>Classic/Previous yearly Design</option>
+        <option>Classis/Previous Monthly Design</option>
+        <option>Subtile Grid</option>
+        <option>Chessboard Grid</option>
+    </select>
+
+    <select class="formatting">
+        <option>Formatting</option>
+        <option>Landscape (4 column)</option>
+        <option>1 Month per page</option>
+        <option>6 Month per page (row format, landscape)</option>
+        <option>Holiday Per Month</option>
+        <option>Language: Hindi</option>
+    </select>
+
+    <select class="option">
+        <option>More Option</option>
+        <option>Basic Classic Customization</option>
+        <option>Advanced Customization</option>
+        <option>System Default Customization</option>
+    </select>
+    </div>
+
+    <div class="year-switcher">
+        <div class="past"> <    2024 </div>
+        <div class="present"><button><b>2025</b></button></div>
+        <div class="future">2026   > </div>
+    </div>
+
+    <p class="msg">Calendar for Year 2025 (India)</p>
+
+    <div class="first-row">
+    <div class="jan"><u>January:</u>
+        
+        <table>
+            <tr>
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Sat</th>
+            </tr>
+
+            <tr>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+            </tr>
+                
+            <tr>
+                <th style="color: red;">5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+            </td>
+
+            <tr>
+                <th style="color: red;">12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+            </td>
+                
+            <tr>
+                <th style="color: red;">19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+                <th>24</th>
+                <th>25</th>
+            </td>
+                
+            <tr>
+                <th style="color: red;">26</th>
+                <th>27</th>
+                <th>28</th>
+                <th>29</th>
+                <th>30</th>
+                <th>31</th>
+            </td>
+        </table>
+        </div>
+
+
+        <div class="feb"><u>Feburary:</u>
+            <table>
+                <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+                </tr>
+    
+                <tr>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th> </th>
+                    <th>1</th>
+                </tr>
+                    
+                <tr>
+                    <th style="color: red;">2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                </td>
+    
+                <tr>
+                    <th style="color: red;">9</th>
+                    <th>10</th>
+                    <th>11</th>
+                    <th>12</th>
+                    <th>13</th>
+                    <th>14</th>
+                    <th>15</th>
+                </td>
+                    
+                <tr>
+                    <th style="color: red;">16</th>
+                    <th>17</th>
+                    <th>18</th>
+                    <th>19</th>
+                    <th>20</th>
+                    <th>21</th>
+                    <th>22</th>
+                </td>
+                    
+                <tr>
+                    <th style="color: red;">23</th>
+                    <th>24</th>
+                    <th>25</th>
+                    <th>26</th>
+                    <th>27</th>
+                    <th>28</th>
+                </td>
+            </table>
+            </div>
+        
+
+            <div class="mar"><u>March:</u>
+                <table>
+                    <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    </tr>
+        
+                    <tr>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th> </th>
+                        <th>1</th>
+                    </tr>
+                        
+                    <tr>
+                        <th style="color: red;">2</th>
+                        <th>3</th>
+                        <th>4</th>
+                        <th>5</th>
+                        <th>6</th>
+                        <th>7</th>
+                        <th>8</th>
+                    </td>
+        
+                    <tr>
+                        <th style="color: red;">9</th>
+                        <th>10</th>
+                        <th>11</th>
+                        <th>12</th>
+                        <th>13</th>
+                        <th>14</th>
+                        <th>15</th>
+                    </td>
+                        
+                    <tr>
+                        <th style="color: red;">16</th>
+                        <th>17</th>
+                        <th>18</th>
+                        <th>19</th>
+                        <th>20</th>
+                        <th>21</th>
+                        <th>22</th>
+                    </td>
+                        
+                    <tr>
+                        <th style="color: red;">23</th>
+                        <th>24</th>
+                        <th>25</th>
+                        <th>26</th>
+                        <th>27</th>
+                        <th>28</th>
+                        <th>29</th>
+                    </td>
+
+                    <tr>
+                        <th style="color: red;">30</th>
+                        <th>31</th>
+                    </td>
+                </table>
+                </div>
+
+                <div class="apr"><u>April:</u>
+                    <table>
+                        <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        </tr>
+            
+                        <tr>
+                            <th> </th>
+                            <th> </th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                        </tr>
+                            
+                        <tr>
+                            <th style="color: red;">6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>10</th>
+                            <th>11</th>
+                            <th>12</th>
+                        </td>
+            
+                        <tr>
+                            <th style="color: red;">13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                            <th>18</th>
+                            <th>19</th>
+                        </td>
+                            
+                        <tr>
+                            <th style="color: red;">20</th>
+                            <th>21</th>
+                            <th>22</th>
+                            <th>23</th>
+                            <th>24</th>
+                            <th>25</th>
+                            <th>26</th>
+                        </td>
+                            
+                        <tr>
+                            <th style="color: red;">27</th>
+                            <th>28</th>
+                            <th>29</th>
+                            <th>30</th>
+                        </td>
+                    </table>
+                    </div>
+                    </div>
+
+            <div class="second-row">
+                <div class="may"><u>May:</u>
+                    <table>
+                        <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        </tr>
+            
+                        <tr>
+                            <th> </th>
+                            <th> </th>
+                            <th> </th>
+                            <th> </th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                        </tr>
+                            
+                        <tr>
+                            <th style="color: red;">4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                            <th>10</th>
+                        </td>
+            
+                        <tr>
+                            <th style="color: red;">11</th>
+                            <th>12</th>
+                            <th>13</th>
+                            <th>14</th>
+                            <th>15</th>
+                            <th>16</th>
+                            <th>17</th>
+                        </td>
+                            
+                        <tr>
+                            <th style="color: red;">18</th>
+                            <th>19</th>
+                            <th>20</th>
+                            <th>21</th>
+                            <th>22</th>
+                            <th>23</th>
+                            <th>24</th>
+                        </td>
+                            
+                        <tr>
+                            <th style="color: red;">25</th>
+                            <th>26</th>
+                            <th>27</th>
+                            <th>28</th>
+                            <th>29</th>
+                            <th>30</th>
+                            <th>31</th>
+                        </td>
+                    </table>
+                    </div>
+
+                    <div class="june"><u>June:</u>
+                        <table>
+                            <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                            </tr>
+                
+                            <tr>
+                                <th style="color: red;">1</th>
+                                <th>2</th>
+                                <th>3</th>
+                                <th>4</th>
+                                <th>5</th>
+                                <th>6</th>
+                                <th>7</th>
+                            </tr>
+                                
+                            <tr>
+                                <th style="color: red;">8</th>
+                                <th>9</th>
+                                <th>10</th>
+                                <th>11</th>
+                                <th>12</th>
+                                <th>13</th>
+                                <th>14</th>
+                            </td>
+                
+                            <tr>
+                                <th style="color: red;">15</th>
+                                <th>16</th>
+                                <th>17</th>
+                                <th>18</th>
+                                <th>19</th>
+                                <th>20</th>
+                                <th>21</th>
+                            </td>
+                                
+                            <tr>
+                                <th style="color: red;">22</th>
+                                <th>23</th>
+                                <th>24</th>
+                                <th>25</th>
+                                <th>26</th>
+                                <th>27</th>
+                                <th>28</th>
+                            </td>
+
+                            <tr>
+                                <th style="color: red;">29</th>
+                                <th>30</th>
+                            </td>
+                        </table>
+                        </div>
+
+                        <div class="july"><u>July:</u>
+                            <table>
+                                <tr>
+                                <th>Sun</th>
+                                <th>Mon</th>
+                                <th>Tue</th>
+                                <th>Wed</th>
+                                <th>Thu</th>
+                                <th>Fri</th>
+                                <th>Sat</th>
+                                </tr>
+                    
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                    <th>4</th>
+                                    <th>5</th>
+                                </tr>
+                                    
+                                <tr>
+                                    <th style="color: red;">6</th>
+                                    <th>7</th>
+                                    <th>8</th>
+                                    <th>9</th>
+                                    <th>10</th>
+                                    <th>11</th>
+                                    <th>12</th>
+                                </td>
+                    
+                                <tr>
+                                    <th style="color: red;">13</th>
+                                    <th>14</th>
+                                    <th>15</th>
+                                    <th>16</th>
+                                    <th>17</th>
+                                    <th>18</th>
+                                    <th>19</th>
+                                </td>
+                                    
+                                <tr>
+                                    <th style="color: red;">20</th>
+                                    <th>21</th>
+                                    <th>22</th>
+                                    <th>23</th>
+                                    <th>24</th>
+                                    <th>25</th>
+                                    <th>26</th>
+                                </td>
+                                    
+                                <tr>
+                                    <th style="color: red;">27</th>
+                                    <th>28</th>
+                                    <th>29</th>
+                                    <th>30</th>
+                                    <th>31</th>
+                                </td>
+                            </table>
+                            </div>
+
+
+                            <div class="aug"><u>August:</u>
+                                <table>
+                                    <tr>
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                    </tr>
+                        
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                    </tr>
+                                        
+                                    <tr>
+                                        <th style="color: red;">3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                        <th>7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                    </td>
+                        
+                                    <tr>
+                                        <th style="color: red;">10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                        <th>16</th>
+                                    </td>
+                                        
+                                    <tr>
+                                        <th style="color: red;">17</th>
+                                        <th>18</th>
+                                        <th>19</th>
+                                        <th>20</th>
+                                        <th>21</th>
+                                        <th>22</th>
+                                        <th>23</th>
+                                    </td>
+                                        
+                                    <tr>
+                                        <th style="color: red;">24</th>
+                                        <th>25</th>
+                                        <th>26</th>
+                                        <th>27</th>
+                                        <th>28</th>
+                                        <th>29</th>
+                                        <th>30</th>
+                                    </td>
+
+                                    <tr>
+                                        <th style="color: red;">31</th>
+                                    </td>
+                                </table>
+                                </div>
+                            </div>
+    
+                            <div class="third-row">
+                            <div class="sep"><u>September:</u>
+                                <table>
+                                    <tr>
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                    </tr>
+                        
+                                    <tr>
+                                        <th></th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                    </tr>
+                                        
+                                    <tr>
+                                        <th style="color: red;">7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                        <th>10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                    </td>
+                        
+                                    <tr>
+                                        <th style="color: red;">14</th>
+                                        <th>15</th>
+                                        <th>16</th>
+                                        <th>17</th>
+                                        <th>18</th>
+                                        <th>19</th>
+                                        <th>20</th>
+                                    </td>
+                                        
+                                    <tr>
+                                        <th style="color: red;">21</th>
+                                        <th>22</th>
+                                        <th>23</th>
+                                        <th>24</th>
+                                        <th>25</th>
+                                        <th>26</th>
+                                        <th>27</th>
+                                    </td>
+                                        
+                                    <tr>
+                                        <th style="color: red;">28</th>
+                                        <th>29</th>
+                                        <th>30</th>
+                                    </td>
+                                </table>
+                                </div>
+
+                                <div class="oct"><u>October:</u>
+                                    <table>
+                                        <tr>
+                                        <th>Sun</th>
+                                        <th>Mon</th>
+                                        <th>Tue</th>
+                                        <th>Wed</th>
+                                        <th>Thu</th>
+                                        <th>Fri</th>
+                                        <th>Sat</th>
+                                        </tr>
+                            
+                                        <tr>
+                                            <th> </th>
+                                            <th> </th>
+                                            <th> </th>
+                                            <th>1</th>
+                                            <th>2</th>
+                                            <th>3</th>
+                                            <th>4</th>
+                                        </tr>
+                                            
+                                        <tr>
+                                            <th style="color: red;">5</th>
+                                            <th>6</th>
+                                            <th>7</th>
+                                            <th>8</th>
+                                            <th>9</th>
+                                            <th>10</th>
+                                            <th>11</th>
+                                        </td>
+                            
+                                        <tr>
+                                            <th style="color: red;">12</th>
+                                            <th>13</th>
+                                            <th>14</th>
+                                            <th>15</th>
+                                            <th>16</th>
+                                            <th>17</th>
+                                            <th>18</th>
+                                        </td>
+                                            
+                                        <tr>
+                                            <th style="color: red;">19</th>
+                                            <th>20</th>
+                                            <th>21</th>
+                                            <th>22</th>
+                                            <th>23</th>
+                                            <th>24</th>
+                                            <th>25</th>
+                                        </td>
+                                            
+                                        <tr>
+                                            <th style="color: red;">26</th>
+                                            <th>27</th>
+                                            <th>28</th>
+                                            <th>29</th>
+                                            <th>30</th>
+                                            <th>31</th>
+                                        </td>
+                                    </table>
+                                    </div>
+
+                                    <div class="nov"><u>November:</u>
+                                        <table>
+                                            <tr>
+                                            <th>Sun</th>
+                                            <th>Mon</th>
+                                            <th>Tue</th>
+                                            <th>Wed</th>
+                                            <th>Thu</th>
+                                            <th>Fri</th>
+                                            <th>Sat</th>
+                                            </tr>
+                                
+                                            <tr>
+                                                <th> </th>
+                                                <th> </th>
+                                                <th> </th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th>1</th>
+                                            </tr>
+                                                
+                                            <tr>
+                                                <th style="color: red;">2</th>
+                                                <th>3</th>
+                                                <th>4</th>
+                                                <th>5</th>
+                                                <th>6</th>
+                                                <th>7</th>
+                                                <th>8</th>
+                                            </td>
+                                
+                                            <tr>
+                                                <th style="color: red;">9</th>
+                                                <th>10</th>
+                                                <th>11</th>
+                                                <th>12</th>
+                                                <th>13</th>
+                                                <th>14</th>
+                                                <th>15</th>
+                                            </td>
+                                                
+                                            <tr>
+                                                <th style="color: red;">16</th>
+                                                <th>17</th>
+                                                <th>18</th>
+                                                <th>19</th>
+                                                <th>20</th>
+                                                <th>21</th>
+                                                <th>22</th>
+                                            </td>
+
+                                            <tr>
+                                                <th style="color: red;">23</th>
+                                                <th>24</th>
+                                                <th>25</th>
+                                                <th>26</th>
+                                                <th>27</th>
+                                                <th>28</th>
+                                                <th>29</th>
+                                            </td>
+
+                                            <tr>
+                                                <th style="color: red;">30</th>
+                                            </td>
+                                        </table>
+                                        </div>
+
+                                        <div class="dec"><u>December:</u>
+                                            <table>
+                                                <tr>
+                                                <th>Sun</th>
+                                                <th>Mon</th>
+                                                <th>Tue</th>
+                                                <th>Wed</th>
+                                                <th>Thu</th>
+                                                <th>Fri</th>
+                                                <th>Sat</th>
+                                                </tr>
+                                    
+                                                <tr>
+                                                    <th> </th>
+                                                    <th>1</th>
+                                                    <th>2</th>
+                                                    <th>3</th>
+                                                    <th>4</th>
+                                                    <th>5</th>
+                                                    <th>6</th>
+                                                </tr>
+                                                    
+                                                <tr>
+                                                    <th style="color: red;">7</th>
+                                                    <th>8</th>
+                                                    <th>9</th>
+                                                    <th>10</th>
+                                                    <th>11</th>
+                                                    <th>12</th>
+                                                    <th>13</th>
+                                                </td>
+                                    
+                                                <tr>
+                                                    <th style="color: red;">14</th>
+                                                    <th>15</th>
+                                                    <th>16</th>
+                                                    <th>17</th>
+                                                    <th>18</th>
+                                                    <th>19</th>
+                                                    <th>20</th>
+                                                </td>
+                                                    
+                                                <tr>
+                                                    <th style="color: red;">21</th>
+                                                    <th>22</th>
+                                                    <th>23</th>
+                                                    <th>24</th>
+                                                    <th>25</th>
+                                                    <th>26</th>
+                                                    <th>27</th>
+                                                </td>
+                                                    
+                                                <tr>
+                                                    <th style="color: red;">28</th>
+                                                    <th>29</th>
+                                                    <th>30</th>
+                                                    <th>31</th>
+                                                </td>
+                                            </table>
+                                            </div>
+                                        </div>
+
+                                
+<div>
+<h3 id="date"><u>Holiday and Observances:</u></h3>
+</div>
+
+
+<div id="holiday">
+    <p> 1 Jan New Year Day</p>
+    <p> 6 Jan Guru Govind Singh Jayanti </p>
+    <p> 14 Jan Pongal </p>
+    <p> 14 Jan Makar Sankranti </p>
+    <span style="color: red">26 Jan</span> Republic Day
+    <p> 2 Feb Vasant Panchami </p>
+    <p> 12 Feb Guru Ravidas Jayanti </p>
+    <p> 19 Feb Shivaji Jayanti </p>
+    <p> 23 Feb Maharishi Dayanand Saraswati Jayanti </p>
+    <span style="color: red">26 Feb</span> Maha Shivratri
+    <p> 2 Mar Ramadan Start</p>
+    <p> 13 Mar Holika Dahan </p>
+    <span style="color: red">14 Mar</span> Holi
+    <p> 14 Mar Dolyatra </p>
+    <p> 28 Mar Jamat Ul-Vida</p>
+    <p> 30 Mar Chaitra Sukhladi</p>
+    <p> 30 Mar Ugadi</p>
+    <span style="color: red">31 Mar</span> Ramadan Start
+    <p> 6 Apr Ram Navami</p>
+    <span style="color: red">10 Apr</span> Mahavir Jayanti
+    <p> 13 Apr Vaisakhi</p>
+    <p> 14 Apr Mesadi </p>
+    <p> 14 Apr Ambedkar Jayanti</p>
+    <p> 15 Apr Bahag Bihu/Vaisakhadi</p>
+    <span style="color: red">18 Apr</span> Good Friday
+    <p> 20 Apr Easter Day</p>
+    <p> 9 May Birthday of Rabindranath Tigore</p>
+    <span style="color: red">12 May</span> Buddha Purnima/Vesak
+    <span style="color: red">7 Jun</span> Bakrid
+    <p>27 JuneRath Yatra</p>
+    <span style="color: red">6 July</span> Muharram/Ashura
+    <p> 9 Aug Raksha Bandhan (Rakhi)</p>
+    <span style="color: red">15 Aug</span> Independence Day
+    <p> 15 Aug Janmashtmi</p>
+    <span style="color: red">16 Aug</span> Janmashtami
+    <p> 27 Aug Ganesh Chaturthi/Vinayaka Chaturthi</p>
+    <span style="color: red">5 Sep</span> Milad un-Nabi
+    <p> 5 sep Onam</p>
+    <p> 22 sep First Day of Sharad Navratri</p>
+    <p> 28 sep First Day of Durga Puja</p>
+    <p> 29 sep Maha Saptami</p>
+    <p> 30 sep Maha Ashtami</p>
+    <p> 1 OCt Maha Navami</p>
+    <span style="color: red">2 Oct</span> Gandhi Jayanti
+    <span style="color: red">2 Oct</span> Dussehra
+    <p> 7 Oct Maharishi Valmiki Jayanti</p>
+    <p> 10 Oct Karaka Chaturthi(Karva Chauth)</p>
+    <p> 20 Naraka Chaturdasi</p>
+    <span style="color: red">20 Oct</span> Diwali
+    <p> 22 Oct Govardhan Puja</p>
+    <p> 23 Oct Bhai Duj</p>
+    <p> 28 Oct Chhat Puja(Pratihar Sashthi/Surya Sashthi)</p>
+    <span style="color: red">5 Nov</span> Guru Nanak Jayanti
+    <p> 24 Nov Guru Tegh Bahadur's Martyrdom Day</p>
+    <p> 24 Dec Christmas Eve</p>
+    <span style="color: red">25 Dec</span> Christmas
+</div>
+
+
+</body>
+</html>
